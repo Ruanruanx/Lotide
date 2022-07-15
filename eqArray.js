@@ -21,10 +21,10 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(arr1, arr2) {
   let len = arr1.length;
-  let result = 'true';
+  let result = true;
   for (let i = 0; i < len; i++) {
     if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
-      result = 'false';
+      result = false;
       break;
     }
   }
@@ -33,6 +33,6 @@ const eqArrays = function(arr1, arr2) {
 
 
 // TEST CODE
-console.log(eqArrays([1, 2, 3], [1, 2, 3]));
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 
 
