@@ -1,5 +1,7 @@
 // FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
+  actual = actual.toString();
+  expected = expected.toString();
   let len = actual.length;
   let result = '';
   for (let i = 0; i < len; i++) {
@@ -12,9 +14,9 @@ const assertEqual = function (actual, expected) {
     result = 'Failed';
   }
   if (result === 'Failed') {
-    console.log(`Assertion Failed: ${actual}  !== ${expected}`)
+    console.log(`Assertion Failed: ${actual}  !== ${expected}`);
   } else {
-    console.log(`Assertion Passed: ${actual} === ${expected}`)
+    console.log(`Assertion Passed: ${actual} === ${expected}`);
   }
 
 
@@ -22,4 +24,4 @@ const assertEqual = function (actual, expected) {
 
 // TEST CODE
 assertEqual("Lighthouse", "Lighthouse Labs");
-assertEqual(1, 1);
+assertEqual(1,2);

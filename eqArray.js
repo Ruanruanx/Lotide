@@ -1,11 +1,15 @@
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
+  actual = actual.toString();
+  expected = expected.toString();
   let len = actual.length;
-  let result = 'Passsed';
+  let result = '';
   for (let i = 0; i < len; i++) {
     if (actual[i] !== expected[i]) {
       result = 'Failed';
       break;
+    } else {
+      result = 'Passed';
     }
   }
   if (len !== expected.length) {
@@ -33,6 +37,6 @@ const eqArrays = function(arr1, arr2) {
 
 
 // TEST CODE
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays([1, 2, 3], [1, 4,3]), true);
 
 
