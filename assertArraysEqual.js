@@ -1,5 +1,7 @@
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
+  actual = actual.toString();
+  expected = expected.toString();
   let len = actual.length;
   let result = 'Passsed';
   for (let i = 0; i < len; i++) {
@@ -20,22 +22,26 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arr1, arr2) {
-  let len = arr1.length;
+  let len1 = arr1.length;
+  let len2 = arr2.length;
   let result = true;
-  for (let i = 0; i < len; i++) {
-    if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
-      result = false;
-      break;
+  if (len1 !== len2) {
+    result = false;
+  } else {
+    for (let i = 0; i < len1; i++) {
+      if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
+        result = false;
+        break;
+      }
     }
   }
-  //   if (result === true) {
-  //     console.log(`Assertion Passed: ${arr1} === ${arr2}`);
-  //   } else {
-  //     console.log(`Assertion Failed: ${arr1} !==${arr2}`);
-  //   }
   return result;
 };
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+const assertArraysEqual = function(arr1, arr2) {
+  console.log(assertEqual(eqArrays(arr1, arr2), true));
+};
+
+assertArraysEqual([1, 2, 3], [1, 2, 4]);
 
 
