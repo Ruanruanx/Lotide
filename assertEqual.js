@@ -1,17 +1,26 @@
-// FUNCTION IMPLEMENTATION
+//define extreme case
+//define general case, then add condition to define specific case
+
 const assertEqual = function(actual, expected) {
-  actual = actual.toString();
-  expected = expected.toString();
-  let len = actual.length;
   let result = '';
-  for (let i = 0; i < len; i++) {
-    if (actual[i] !== expected[i]) {
+  if (actual === undefined) {
+    if (expected !== undefined) {
       result = 'Failed';
-      break;
     }
-  }
-  if (len !== expected.length) {
-    result = 'Failed';
+  } else {
+    actual = actual.toString();
+    expected = expected.toString();
+    let len = actual.length;
+
+    for (let i = 0; i < len; i++) {
+      if (actual[i] !== expected[i]) {
+        result = 'Failed';
+        break;
+      }
+    }
+    if (len !== expected.length) {
+      result = 'Failed';
+    }
   }
   if (result === 'Failed') {
     console.log(`Assertion Failed: ${actual}  !== ${expected}`);
@@ -19,9 +28,4 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
   }
 
-
 };
-
-// TEST CODE
-assertEqual("Lighthouse", "Lighthouse Labs");
-assertEqual(1,1);
