@@ -21,10 +21,10 @@ const assertEqual = function(actual, expected) {
     }
   }
   if (result === 'Failed') {
-    console.log(`Assertion Failed: ${actual}  !== ${expected}`);
+    // console.log(`Assertion Failed: ${actual}  !== ${expected}`);
     return 'Failed';
   } else {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
+    //console.log(`Assertion Passed: ${actual} === ${expected}`);
     return 'Passed';
   }
 
@@ -72,7 +72,6 @@ const eqObjects = function(object1, object2) {
     }
 
   }
-  console.log(result);
   return result;
 };
 
@@ -83,4 +82,5 @@ const dc = { d: ["2", 3], c: "1" };
 eqObjects(cd, dc); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
+console.log('----');
 eqObjects(cd, cd2); // => false
