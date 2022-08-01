@@ -1,3 +1,5 @@
+//define extreme case
+//define general case, then add condition to define specific case
 
 const assertEqual = function(actual, expected) {
   let result = '';
