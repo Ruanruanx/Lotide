@@ -1,6 +1,5 @@
 const assert = require('chai').assert;
 const findKey = require('../findKey');
-const assertEqual = require('../assertEqual');
 
 // //test
 // let result = findKey({
