@@ -51,19 +51,5 @@ const map = function(array, callback) {
 };
 
 // //console.log(result1);
-// //test 1
-// const words = ["ground", "control", "to", "major", "tom", "will", "you"];
-// const result1 = map(words, word => word[0]);
-// assertArraysEqual(result1, ['g', 'c', 't', 'm', 't', 'w', 'y']);
-
-// //test 2
-// console.log("---------Test 2---------")
-// const result2 = map(words, word => word.length);
-// assertArraysEqual(result2, [6, 7, 2, 5, 3, 4, 3]);
-
-// //test 3
-// console.log("---------Test 3---------")
-// const result3 = map(words, word => word + 's');
-// assertArraysEqual(result3, ["grounds", "controls", "tos", "majors", "toms", "wills", "yous"]);
 
 module.exports = map;
