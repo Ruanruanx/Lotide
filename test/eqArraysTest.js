@@ -1,9 +1,8 @@
-const assertEqual = require('../assertEqual');
 const eqArrays = require('../eqArrays');
 const assert = require('chai').assert;
 
 // TEST CODE
-assertEqual(eqArrays([1, 2, 3], [1, 4, 3]), true);
+
 describe("eqArray", () => {
   it("test 1", () => {
     assert.strictEqual(eqArrays([1, 2, 3], [1, 4, 3]), false);
