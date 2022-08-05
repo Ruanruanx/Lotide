@@ -1,55 +1,5 @@
-
-const assertEqual = function(actual, expected) {
-  let result = '';
-  if (actual === undefined) {
-    if (expected !== undefined) {
-      result = 'Failed';
-    }
-  } else {
-    actual = actual.toString();
-    expected = expected.toString();
-    let len = actual.length;
-
-    for (let i = 0; i < len; i++) {
-      if (actual[i] !== expected[i]) {
-        result = 'Failed';
-        break;
-      }
-    }
-    if (len !== expected.length) {
-      result = 'Failed';
-    }
-  }
-  if (result === 'Failed') {
-    // console.log(`Assertion Failed: ${actual}  !== ${expected}`);
-    return 'Failed';
-  } else {
-    //console.log(`Assertion Passed: ${actual} === ${expected}`);
-    return 'Passed';
-  }
-
-};
-
-const eqArrays = function(arr1, arr2) {
-  let len1 = arr1.length;
-  let len2 = arr2.length;
-  let result = true;
-  if (len1 !== len2) {
-    result = false;
-  } else {
-    for (let i = 0; i < len1; i++) {
-      if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
-        result = false;
-        break;
-      }
-    }
-  }
-  return result;
-};
-
-const assertArraysEqual = function(arr1, arr2) {
-  console.log(assertEqual(eqArrays(arr1, arr2), true));
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   //iterate key in obj1, compare the values by key
@@ -65,6 +15,8 @@ const eqObjects = function(object1, object2) {
       if (!arrResult) {
         result = false;
       }
+    } else if (typeof (object1[key]) === 'object') {
+      result = eqObjects(object1[key], object2[key]);
     } else {
       if ((object1[key] !== object2[key])) {
         result = false;
@@ -74,6 +26,6 @@ const eqObjects = function(object1, object2) {
   }
   return result;
 };
-
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }) );
 
 module.exports = eqObjects;
