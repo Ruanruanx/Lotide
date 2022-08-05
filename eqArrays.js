@@ -5,6 +5,14 @@ const eqArrays = function(arr1, arr2) {
   let len = arr1.length;
   let result = true;
   for (let i = 0; i < len; i++) {
+    if (Array.isArray(arr1[i])) {
+      if (Array.isArray(arr2[i])) {
+        result = eqArrays(arr1[i], arr2[i]);
+      } else {
+        return false;
+      }
+
+    }
     if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
       result = false;
       break;
@@ -12,6 +20,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return result;
 };
+
 
 module.exports = eqArrays;
 
