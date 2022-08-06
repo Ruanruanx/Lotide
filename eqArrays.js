@@ -12,7 +12,6 @@ const eqArrays = function(arr1, arr2) {
         return false;
       }
     }
-    console.log('test' + assertEqual(arr1[i], arr2[i]));
     if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
       result = false;
       break;
@@ -21,6 +20,5 @@ const eqArrays = function(arr1, arr2) {
   return result;
 };
 
-console.log('result' + eqArrays([1, 2, 3], [1, 4, 3]));
 module.exports = eqArrays;
 
