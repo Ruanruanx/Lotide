@@ -13,4 +13,7 @@ describe("#without", () => {
     const result = without(words, ["lighthouse"]);
     assert.deepEqual(result,["hello", "world"]);
   });
+  it("test 2",()=>{
+    assert.deepEqual(without(["1", "2", "3"], [1, 2, "3"]),["1","2"]);
+  });
 });
