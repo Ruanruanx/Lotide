@@ -8,8 +8,8 @@ const assertEqual = function(actual, expected) {
       result = 'Failed';
     }
   } else {
-    actual = actual.toString();
-    expected = expected.toString();
+    // actual = actual.toString();
+    // expected = expected.toString();
     let len = actual.length;
 
     for (let i = 0; i < len; i++) {
