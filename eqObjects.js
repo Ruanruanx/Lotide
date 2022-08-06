@@ -2,8 +2,8 @@ const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   //iterate key in obj1, compare the values by key
-  let count1 = Object.keys(object1).length;
-  let count2 = Object.keys(object2).length;
+  const count1 = Object.keys(object1).length;
+  const  count2 = Object.keys(object2).length;
   if (count1 !== count2) {
     return false;
   }
