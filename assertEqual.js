@@ -10,15 +10,15 @@ const assertEqual = function(actual, expected) {
   } else {
     // actual = actual.toString();
     // expected = expected.toString();
-    let len = actual.length;
+    let actualLenth = actual.length;
 
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < actualLenth; i++) {
       if (actual[i] !== expected[i]) {
         result = 'Failed';
         break;
       }
     }
-    if (len !== expected.length) {
+    if (actualLenth !== expected.length) {
       result = 'Failed';
     }
   }

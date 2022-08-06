@@ -7,10 +7,10 @@ const assertEqual = require('./assertEqual');
 
 const without = function(arr, itemsToRemove) {
   let newArr = [];
-  let arrLen = arr.length;
-  let arr2Len = itemsToRemove.length;
-  for (let i = 0; i < arrLen; i++) {
-    for (let j = 0; j < arr2Len; j++) {
+  let arrLength = arr.length;
+  let arr2Length = itemsToRemove.length;
+  for (let i = 0; i < arrLength; i++) {
+    for (let j = 0; j < arr2Length; j++) {
       if (assertEqual(arr[i], itemsToRemove[j]) === 'Failed') {
         newArr.push(arr[i]);
       }
