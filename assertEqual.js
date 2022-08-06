@@ -8,17 +8,27 @@ const assertEqual = function(actual, expected) {
       result = 'Failed';
     }
   } else {
-    // actual = actual.toString();
-    // expected = expected.toString();
-    let actualLenth = actual.length;
 
-    for (let i = 0; i < actualLenth; i++) {
+    if (typeof (actual) === 'number') {
+      // actual = actual.toString();
+      // expected = expected.toString();
+      if (typeof (expected) === 'number') {
+        if (actual !== expected) {
+          result = 'Failed';
+        }
+      } else {
+        result = 'Failed';
+      }
+
+    }
+    const actualLength = actual.length;
+    for (let i = 0; i < actualLength; i++) {
       if (actual[i] !== expected[i]) {
         result = 'Failed';
         break;
       }
     }
-    if (actualLenth !== expected.length) {
+    if (actualLength !== expected.length) {
       result = 'Failed';
     }
   }
@@ -27,7 +37,10 @@ const assertEqual = function(actual, expected) {
   } else {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
   }
-
+  //  console.log('result is: ' + result);
   return result;
 };
+
+console.log(assertEqual(2, 4));
+
 module.exports = assertEqual;
