@@ -10,6 +10,9 @@ This project was created and published by me as part of my learnings at Lighthou
 
 ## Usage
 
+**npm Link:**
+`https://www.npmjs.com/package/@amor1006/lotide`
+
 **Install it:**
 
 `npm install @amor1006/lotide`
