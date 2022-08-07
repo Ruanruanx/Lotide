@@ -2,11 +2,9 @@
 //define general case, then add condition to define specific case
 
 const assertEqual = function(actual, expected) {
-  let result = '';
-  if (actual === undefined) {
-    if (expected !== undefined) {
-      result = 'Failed';
-    }
+  let result = true;
+  if (actual === undefined && expected !== undefined) {
+    result = 'Failed';
   } else {
     if (typeof (actual) === 'number') {
       if (typeof (expected) === 'number') {
@@ -36,7 +34,5 @@ const assertEqual = function(actual, expected) {
   //  console.log('result is: ' + result);
   return result;
 };
-
-console.log(assertEqual(2, 4));
 
 module.exports = assertEqual;
