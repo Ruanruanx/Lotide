@@ -12,7 +12,7 @@ const eqArrays = function(arr1, arr2) {
         return false;
       }
     }
-    if (assertEqual(arr1[i], arr2[i]) === 'Failed') {
+    if (assertEqual(arr1[i], arr2[i]) === false) {
       result = false;
       break;
     }
