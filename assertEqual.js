@@ -7,18 +7,18 @@ const assertEqual = function(actual, expected) {
     const actualLength = actual.length;
     for (let i = 0; i < actualLength; i++) {
       if (actual[i] !== expected[i]) {
-        result = 'Failed';
+        result = false;
         break;
       }
     }
     if (actualLength !== expected.length) {
-      result = 'Failed';
+      result = false;
     }
   } else if (actual !== expected) {
-    result = 'Failed';
+    result = false;
   }
 
-  if (result === 'Failed') {
+  if (result === false) {
     console.log(`Assertion Failed: ${actual}  !== ${expected}`);
   } else {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
