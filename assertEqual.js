@@ -3,6 +3,7 @@
 
 const assertEqual = function(actual, expected) {
   let result = true;
+  //if the input is string
   if (typeof (actual) === typeof (expected) && typeof (actual) === 'string') {
     const actualLength = actual.length;
     for (let i = 0; i < actualLength; i++) {
@@ -14,6 +15,7 @@ const assertEqual = function(actual, expected) {
     if (actualLength !== expected.length) {
       result = false;
     }
+  //if the input is boolean, number or undefined
   } else if (actual !== expected) {
     result = false;
   }
