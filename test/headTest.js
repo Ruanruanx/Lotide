@@ -20,6 +20,10 @@ describe("#head", () => {
     assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
   });
 
+  it("should return undefined",()=>{
+    assert.strictEqual(head([]),undefined);
+  });
+
 }
 
 );
