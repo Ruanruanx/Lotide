@@ -3,18 +3,7 @@
 
 const assertEqual = function(actual, expected) {
   let result = true;
-  if (actual === undefined && expected !== undefined) {
-    result = 'Failed';
-  } else {
-    if (typeof (actual) === 'number') {
-      if (typeof (expected) === 'number') {
-        if (actual !== expected) {
-          result = 'Failed';
-        }
-      } else {
-        result = 'Failed';
-      }
-    }
+  if (typeof (actual) === typeof (expected) && typeof (actual) === 'string') {
     const actualLength = actual.length;
     for (let i = 0; i < actualLength; i++) {
       if (actual[i] !== expected[i]) {
@@ -25,7 +14,10 @@ const assertEqual = function(actual, expected) {
     if (actualLength !== expected.length) {
       result = 'Failed';
     }
+  } else if (actual !== expected) {
+    result = 'Failed';
   }
+
   if (result === 'Failed') {
     console.log(`Assertion Failed: ${actual}  !== ${expected}`);
   } else {
