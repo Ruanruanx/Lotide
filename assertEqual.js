@@ -8,10 +8,7 @@ const assertEqual = function(actual, expected) {
       result = 'Failed';
     }
   } else {
-
     if (typeof (actual) === 'number') {
-      // actual = actual.toString();
-      // expected = expected.toString();
       if (typeof (expected) === 'number') {
         if (actual !== expected) {
           result = 'Failed';
@@ -19,7 +16,6 @@ const assertEqual = function(actual, expected) {
       } else {
         result = 'Failed';
       }
-
     }
     const actualLength = actual.length;
     for (let i = 0; i < actualLength; i++) {
