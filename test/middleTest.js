@@ -19,4 +19,10 @@ describe("#middleTest", () => {
   it("should return [3]", () => {
     assert.deepEqual(middle([1, 2, 3, 5, 9,]), [3]);
   });
+  it("edge case 1",()=>{
+    assert.deepEqual(middle([0,1]),[]);
+  });
+  it("edge case 2",()=>{
+    assert.deepEqual(middle([0]),[]);
+  });
 });
