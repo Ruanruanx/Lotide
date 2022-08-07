@@ -4,7 +4,7 @@ const assert = require('chai').assert;
 
 describe("#equal test", () => {
   it("test 1", () => {
-    assert.strictEqual(assertEqual("Lighthouse Labs", "Bootcamp"), 'Failed');
+    assert.strictEqual(assertEqual("Lighthouse Labs", "Bootcamp"), false);
   });
   it("test 2", () => {
     assert.strictEqual(assertEqual(1, 1), true);
