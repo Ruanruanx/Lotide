@@ -3,8 +3,6 @@
 //iterate item in arr
 //iterate item in iTR array
 //push item to new array if 2nd item equals ele not in arr
-const assertEqual = require('./assertEqual');
-
 const without = function(arr, itemsToRemove) {
   let newArr = [];
   let arrLength = arr.length;
